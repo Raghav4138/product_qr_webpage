@@ -12,18 +12,20 @@ fetch('products.json')
     .then(products => {
         // Get query parameters from URL
         const urlParams = new URLSearchParams(window.location.search);
-        const batchId = urlParams.get("batch");
+        const productId = urlParams.get("product");
+        const month = urlParams.get("month");
 
-        if (products[batchId]) {
-            const product = products[batchId];
+        // Check if the product exists in the JSON data
+        if (products[productId]) {
+            const product = products[productId];
 
             // Populate the product-specific details
-            document.getElementById("serial-no").innerText = batchId;
+            document.getElementById("serial-no").innerText = `${productId}-${month}`; // Combining product ID and month
             document.getElementById("item").innerText = product.item;
             document.getElementById("model").innerText = product.model;
-            document.getElementById("mfd").innerText = product.mfd;
+            document.getElementById("mfd").innerText = month; // Use the month from the query parameter
             document.getElementById("warranty").innerText = product.warranty;
-            document.getElementById("covers").innerText = product.covers;
+            document.getElementById("covers").innerText = "1 Year";
             document.getElementById("mrp").innerText = product.mrp;
 
             // Populate the global details
@@ -35,7 +37,7 @@ fetch('products.json')
             document.getElementById("catalog").innerText = "Catalog Link";
             document.getElementById("catalog").href = globalData.catalog;
         } else {
-            document.body.innerHTML = "<p>Invalid Batch or Product</p>";
+            document.body.innerHTML = "<p>Invalid Product</p>";
         }
     })
     .catch(error => {

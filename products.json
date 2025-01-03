@@ -1,27 +1,14 @@
 {
-    "HF32C-jan2025": {
+  "HF32C": {
       "item": "Copper Model HF32C",
       "model": "HF32C",
-      "mfd": "Jan 2025",
-      "warranty": "Jan 2026",
-      "covers": "1 Year",
+      "warranty": "1 Year",
       "mrp": "₹3500"
-    },
-    "AL2025-feb2025": {
+  },
+  "AL2025": {
       "item": "Aluminium Model AL2025",
       "model": "AL2025",
-      "mfd": "Feb 2025",
-      "warranty": "Feb 2026",
-      "covers": "1 Year",
+      "warranty": "1 Year",
       "mrp": "₹4500"
-    },
-    "HF32C-feb2025": {
-        "item": "Copper Model HF32C",
-        "model": "HF32C",
-        "mfd": "feb 2025",
-        "warranty": "feb 2026",
-        "covers": "1 Year",
-        "mrp": "₹2800"
-      }
   }
-  
+}
